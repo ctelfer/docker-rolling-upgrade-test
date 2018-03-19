@@ -1,8 +1,8 @@
-version: '3.4'
+version: '3.3'
 
 services:
   webservice:
-    image: mvdstam/apache-rolling-update
+    image: ctelfer/apache-rolling-update:latest
     ports:
       - "80:80"
     healthcheck:
@@ -16,6 +16,5 @@ services:
       update_config:
         parallelism: 1
         delay: 5s
-        order: start-first
       restart_policy:
         condition: on-failure
